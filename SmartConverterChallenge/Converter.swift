@@ -42,7 +42,12 @@ struct Converter {
         let result =  formatter.string(from: NSNumber(value: toVal.value))
         return result ?? ""
     }
-    
+    static func convert<T>(from: T, to: T, value: Double) -> String where T: Dimension {
+        let fromVal = Measurement(value: value, unit: from)
+        let toVal = fromVal.converted(to: to)
+        let result =  formatter.string(from: NSNumber(value: toVal.value))
+        return result ?? ""
+    }
     
     
 }

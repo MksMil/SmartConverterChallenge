@@ -22,7 +22,7 @@ enum Temp: String, Identifiable, CaseIterable{
 
 struct TemperatureView: View {
     
-    @State private var firstTemp: Temp = .C
+    @State private var firstTemp: Temp = Temp.allCases[0]
     @State private var secondTemp: Temp = .C
     
     @State private var firstNum: Double = 0

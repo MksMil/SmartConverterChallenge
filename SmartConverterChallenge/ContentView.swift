@@ -7,7 +7,7 @@
 
 //temperature: celcius, fahrenheit, kelvin
 //lenght: meters, kilometers, yard, foot, miles
-//time:seconds, minutes, hour, day
+//time:seconds, minutes, hour
 //volume: mililiters, liters, cup, pints, galoon
 
 import SwiftUI
@@ -39,13 +39,17 @@ struct ContentView: View {
                 case .none:
                     NoneView()
                 case .lenght:
-                    LenghtView()
+                    MainView<UnitLength>(firstCase: UnitLength.feet,
+                             secondCase: UnitLength.feet)
                 case .temp:
-                    TemperatureView()
+                    MainView<UnitTemperature>(firstCase: UnitTemperature.celsius,
+                             secondCase: UnitTemperature.celsius)
                 case .time:
-                    TimeView()
+                    MainView<UnitDuration>(firstCase: UnitDuration.seconds,
+                             secondCase: UnitDuration.seconds)
                 case .volume:
-                    VolumeView()
+                    MainView<UnitVolume>(firstCase: UnitVolume.milliliters,
+                             secondCase: UnitVolume.milliliters)
                 }
             }
                 

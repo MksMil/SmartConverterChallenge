@@ -4,7 +4,7 @@
 //
 //  Created by Миляев Максим on 31.05.2023.
 //
-//time:seconds, minutes, hour, day
+//time:seconds, minutes, hour
 
 
 import SwiftUI
