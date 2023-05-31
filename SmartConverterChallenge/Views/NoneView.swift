@@ -9,9 +9,17 @@ import SwiftUI
 
 struct NoneView: View {
     var body: some View {
-        Text("Choose, what you want to convert")
-            .font(.title2)
+        VStack {
+            Image(systemName: "hand.point.up")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 300)
+                .offset(CGSize(width: 0, height: -50))
+            Text("Choose, what you want to convert")
+                .font(.title2)
             .fontWeight(.ultraLight)
+        }
+        .offset(CGSize(width: 0, height: -80))
     }
 }
 

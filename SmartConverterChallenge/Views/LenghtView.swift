@@ -13,21 +13,6 @@ enum Length: String, Identifiable, CaseIterable {
     var id: Self { self }
 }
 
-func unitVal(val: Length) -> UnitLength{
-    switch val {
-    case .m:
-        return UnitLength.meters
-    case .km:
-        return UnitLength.kilometers
-    case .yrd:
-        return UnitLength.yards
-    case .fts:
-        return UnitLength.feet
-    case .mls:
-        return UnitLength.miles
-        
-    }
-}
 
 struct LenghtView: View {
     
@@ -36,11 +21,26 @@ struct LenghtView: View {
     
     @State private var value: Double = 0
     private var resultNum: String {
-        
         return Converter.convertLenght(from: unitVal(val: firstCase),
                                      to: unitVal(val: secondCase),
                                      value: value)
     }
+    func unitVal(val: Length) -> UnitLength{
+        switch val {
+        case .m:
+            return UnitLength.meters
+        case .km:
+            return UnitLength.kilometers
+        case .yrd:
+            return UnitLength.yards
+        case .fts:
+            return UnitLength.feet
+        case .mls:
+            return UnitLength.miles
+            
+        }
+    }
+
     
     
     var body: some View {
@@ -55,7 +55,6 @@ struct LenghtView: View {
                     }
                     .pickerStyle(.segmented)
                     .padding(.leading)
-//                    Spacer()
                     Picker("Temp", selection: $secondCase) {
                         ForEach(Length.allCases) {
                             Text($0.rawValue)
@@ -67,18 +66,12 @@ struct LenghtView: View {
                 
                 //second row with textfilds
                 HStack {
-                    
-                    
                     TextField("Value", value: $value, format: .number)
                         .keyboardType(.decimalPad)
-//                        .frame(width: geometry.size.width / 3)
                         .multilineTextAlignment(.center)
                         .padding(geometry.size.width / 10)
                         .textFieldStyle(.roundedBorder)
-                        
-
-                    Spacer()
-                    
+ 
                     Label(title: {
                         Text(resultNum)
                             .font(.title)
@@ -87,16 +80,13 @@ struct LenghtView: View {
                             
                     }, icon: {})
                     .labelStyle(.titleOnly)
-                    .frame(width: geometry.size.width / 3)
+                    .frame(width: geometry.size.width / 2)
                     .multilineTextAlignment(.center)
-                    .padding(geometry.size.width / 10)
-                    
                 }
                 .padding()
             }
             .padding(.top, geometry.size.height / 8)
         }
-    
     }
 }
 

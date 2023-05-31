@@ -55,31 +55,24 @@ struct TemperatureView: View {
                         }
                     }
                     .pickerStyle(.segmented)
-                    .padding()
-                    Spacer()
+                    .padding(.leading)
                     Picker("Temp", selection: $secondTemp) {
                         ForEach(Temp.allCases) {
                             Text($0.rawValue)
                         }
                     }
                     .pickerStyle(.segmented)
-                    .padding()
+                    .padding(.trailing)
                 }
                 
                 //second row with textfilds
                 HStack {
-                    
-                    
                     TextField("Value", value: $firstNum, format: .number)
                         .keyboardType(.decimalPad)
-//                        .frame(width: geometry.size.width / 3)
                         .multilineTextAlignment(.center)
                         .padding(geometry.size.width / 10)
                         .textFieldStyle(.roundedBorder)
-                        
-
-                    Spacer()
-                    
+    
                     Label(title: {
                         Text(resultNum)
                             .font(.title)
@@ -88,9 +81,8 @@ struct TemperatureView: View {
                             
                     }, icon: {})
                     .labelStyle(.titleOnly)
-                    .frame(width: geometry.size.width / 3)
+                    .frame(width: geometry.size.width / 2)
                     .multilineTextAlignment(.center)
-                    .padding(geometry.size.width / 10)
                     
                 }
                 .padding()

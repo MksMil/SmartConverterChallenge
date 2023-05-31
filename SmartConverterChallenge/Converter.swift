@@ -9,7 +9,7 @@ import Foundation
 
 let formatter: NumberFormatter  = {
     let form = NumberFormatter()
-    form.maximumFractionDigits = 2
+    form.maximumFractionDigits = 3
     return form
 }()
 

@@ -34,18 +34,21 @@ struct ContentView: View {
                    .pickerStyle(.segmented)
                 Spacer()
             }
-            switch stateKind {
-            case .none:
-                NoneView()
-            case .lenght:
-                LenghtView()
-            case .temp:
-                TemperatureView()
-            case .time:
-                TimeView()
-            case .volume:
-                VolumeView()
+            Section {
+                switch stateKind {
+                case .none:
+                    NoneView()
+                case .lenght:
+                    LenghtView()
+                case .temp:
+                    TemperatureView()
+                case .time:
+                    TimeView()
+                case .volume:
+                    VolumeView()
+                }
             }
+                
         }
         .padding()
         .background {
