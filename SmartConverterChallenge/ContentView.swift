@@ -21,7 +21,7 @@ enum Kind:  String, CaseIterable, Identifiable {
 
 struct ContentView: View {
     
-    @State private var stateKind: Kind = .temp
+    @State private var stateKind: Kind = .none
     var body: some View {
         ZStack(alignment: .center) {
             VStack {
@@ -39,17 +39,29 @@ struct ContentView: View {
                 case .none:
                     NoneView()
                 case .lenght:
-                    MainView<UnitLength>(firstCase: UnitLength.feet,
-                             secondCase: UnitLength.feet)
+                    ZStack {
+                        MainView<UnitLength>(firstCase: UnitLength.feet,
+                                             secondCase: UnitLength.feet)
+                        makeImage(name: "compass.drawing")
+                    }
                 case .temp:
-                    MainView<UnitTemperature>(firstCase: UnitTemperature.celsius,
-                             secondCase: UnitTemperature.celsius)
+                    ZStack {
+                        MainView<UnitTemperature>(firstCase: UnitTemperature.celsius,
+                                                  secondCase: UnitTemperature.celsius)
+                        makeImage(name: "thermometer.medium")
+                    }
                 case .time:
-                    MainView<UnitDuration>(firstCase: UnitDuration.seconds,
-                             secondCase: UnitDuration.seconds)
+                    ZStack{
+                        MainView<UnitDuration>(firstCase: UnitDuration.seconds,
+                                               secondCase: UnitDuration.seconds)
+                        makeImage(name: "hourglass.bottomhalf.filled")
+                    }
                 case .volume:
-                    MainView<UnitVolume>(firstCase: UnitVolume.milliliters,
-                             secondCase: UnitVolume.milliliters)
+                    ZStack{
+                        MainView<UnitVolume>(firstCase: UnitVolume.milliliters,
+                                             secondCase: UnitVolume.milliliters)
+                        makeImage(name: "takeoutbag.and.cup.and.straw",width: 300,height:  350)
+                    }
                 }
             }
                 
@@ -61,6 +73,15 @@ struct ContentView: View {
                 .opacity(0.2)
                 
         }
+    }
+    
+    private func makeImage(name: String, width: CGFloat = 250, height: CGFloat = 400) -> some View{
+        return Image(systemName: name)
+            .resizable()
+            .frame(width: width,height: height)
+            .aspectRatio(contentMode: .fit)
+            .offset(CGSize(width: 0, height: 100))
+            .opacity(0.1)
     }
 }
 

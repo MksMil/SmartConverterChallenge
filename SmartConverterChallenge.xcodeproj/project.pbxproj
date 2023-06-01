@@ -19,7 +19,6 @@
 		29C0ABAA2A2746A800628CA7 /* NoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0ABA92A2746A800628CA7 /* NoneView.swift */; };
 		29C0ABAC2A27C60300628CA7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0ABAB2A27C60300628CA7 /* MainView.swift */; };
 		29C0ABAF2A27C7CD00628CA7 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0ABAE2A27C7CD00628CA7 /* DataModel.swift */; };
-		29C0ABB52A27D4AA00628CA7 /* Dimension+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0ABB42A27D4AA00628CA7 /* Dimension+Identifiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +35,6 @@
 		29C0ABA92A2746A800628CA7 /* NoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoneView.swift; sourceTree = "<group>"; };
 		29C0ABAB2A27C60300628CA7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		29C0ABAE2A27C7CD00628CA7 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		29C0ABB42A27D4AA00628CA7 /* Dimension+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dimension+Identifiable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +67,6 @@
 		29C0AB8F2A27409900628CA7 /* SmartConverterChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				29C0ABB32A27D49800628CA7 /* Helper */,
 				29C0ABAD2A27C7B500628CA7 /* Models */,
 				29C0AB9E2A2741C600628CA7 /* Views */,
 				29C0AB902A27409900628CA7 /* SmartConverterChallengeApp.swift */,
@@ -92,10 +89,7 @@
 		29C0AB9E2A2741C600628CA7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				29C0AB9F2A2741D800628CA7 /* TemperatureView.swift */,
-				29C0ABA12A2741F400628CA7 /* LenghtView.swift */,
-				29C0ABA32A27420700628CA7 /* TimeView.swift */,
-				29C0ABA52A27420E00628CA7 /* VolumeView.swift */,
+				29C0ABB62A27DC1D00628CA7 /* CustomViews */,
 				29C0ABA92A2746A800628CA7 /* NoneView.swift */,
 				29C0ABAB2A27C60300628CA7 /* MainView.swift */,
 			);
@@ -110,12 +104,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		29C0ABB32A27D49800628CA7 /* Helper */ = {
+		29C0ABB62A27DC1D00628CA7 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				29C0ABB42A27D4AA00628CA7 /* Dimension+Identifiable.swift */,
+				29C0AB9F2A2741D800628CA7 /* TemperatureView.swift */,
+				29C0ABA12A2741F400628CA7 /* LenghtView.swift */,
+				29C0ABA32A27420700628CA7 /* TimeView.swift */,
+				29C0ABA52A27420E00628CA7 /* VolumeView.swift */,
 			);
-			path = Helper;
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,7 +191,6 @@
 				29C0ABA42A27420700628CA7 /* TimeView.swift in Sources */,
 				29C0ABA82A27422E00628CA7 /* Converter.swift in Sources */,
 				29C0ABAF2A27C7CD00628CA7 /* DataModel.swift in Sources */,
-				29C0ABB52A27D4AA00628CA7 /* Dimension+Identifiable.swift in Sources */,
 				29C0ABAA2A2746A800628CA7 /* NoneView.swift in Sources */,
 				29C0ABA02A2741D800628CA7 /* TemperatureView.swift in Sources */,
 				29C0ABA62A27420E00628CA7 /* VolumeView.swift in Sources */,

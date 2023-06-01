@@ -15,6 +15,7 @@ struct NoneView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 300)
                 .offset(CGSize(width: 0, height: -50))
+                .opacity(0.3)
             Text("Choose, what you want to convert")
                 .font(.title2)
             .fontWeight(.ultraLight)
